@@ -6,6 +6,29 @@ body {
     font-family: "Courier New", Courier, monospace;
 }
 
+#leftCol {
+    background-image: linear-gradient(#9AC3FF, #E7F3FF);
+    position: fixed;
+    width: 170px;
+    overflow-y: scroll;
+    top: 0;
+    bottom: 0;
+    background-color: #8DB9FF;
+}
+
+#input,
+#settings {
+    float: left;
+}
+
+.cloud {
+    width: 175px;
+    margin-top: 20px;
+    margin-bottom: -90px;
+    margin-left: 680px;
+    margin-right: 680px;
+}
+
 .bs-example {
     margin-top: 10px;
     width: 300px;
