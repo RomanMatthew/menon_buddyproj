@@ -42,7 +42,7 @@ tempBtn.addEventListener('click', function(name) {
 })
 outlookBtn.addEventListener('click', function(name) {
     clear()
-    getOutlook()
+    getOutlooks()
 })
 cloudBtn.addEventListener('click', function(name) {
     clear()
@@ -53,48 +53,13 @@ function getData() {
     fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + input.value + '&appid=279e2439d044335148c1233102102740')
         .then(response => response.json())
         .then(data => {
-            var tempValue = data['list'][0]['main']['temp'];
+            // show the location in the jumbotron
             var cityValue = data['city']['name'];
             var countryValue = data['city']['country'];
-            var descValue = data['list'][0]['weather'][0]['description'];
-            var cloudValue = data['list'][0]['clouds']['all']
             main.innerHTML = cityValue + ', ' + countryValue;
-            // temp must be converted from kelvin to fahrenheit
-            temp.innerHTML = (Math.round(((tempValue - 273.15) * (9 / 5) + 32) * 10) / 10) + " deg. F";
-            desc.innerHTML = descValue;
-            clouds.innerHTML = cloudValue + "%";
-            // NEXT DAY
-            var tempValue1 = data['list'][8]['main']['temp'];
-            var descValue1 = data['list'][8]['weather'][0]['description'];
-            var cloudValue1 = data['list'][8]['clouds']['all']
-                // temp must be converted from kelvin to fahrenheit
-            temp1.innerHTML = (Math.round(((tempValue1 - 273.15) * (9 / 5) + 32) * 10) / 10) + " deg. F";
-            desc1.innerHTML = descValue1;
-            clouds1.innerHTML = cloudValue1 + "%";
-            // NEXT DAY
-            var tempValue2 = data['list'][16]['main']['temp'];
-            var descValue2 = data['list'][16]['weather'][0]['description'];
-            var cloudValue2 = data['list'][16]['clouds']['all']
-                // temp must be converted from kelvin to fahrenheit
-            temp2.innerHTML = (Math.round(((tempValue2 - 273.15) * (9 / 5) + 32) * 10) / 10) + " deg. F";
-            desc2.innerHTML = descValue2;
-            clouds2.innerHTML = cloudValue2 + "%";
-            // NEXT DAY
-            var tempValue3 = data['list'][24]['main']['temp'];
-            var descValue3 = data['list'][24]['weather'][0]['description'];
-            var cloudValue3 = data['list'][24]['clouds']['all']
-                // temp must be converted from kelvin to fahrenheit
-            temp3.innerHTML = (Math.round(((tempValue3 - 273.15) * (9 / 5) + 32) * 10) / 10) + " deg. F";
-            desc3.innerHTML = descValue3;
-            clouds3.innerHTML = cloudValue3 + "%";
-            // NEXT DAY
-            var tempValue4 = data['list'][32]['main']['temp'];
-            var descValue4 = data['list'][32]['weather'][0]['description'];
-            var cloudValue4 = data['list'][32]['clouds']['all']
-                // temp must be converted from kelvin to fahrenheit
-            temp4.innerHTML = (Math.round(((tempValue4 - 273.15) * (9 / 5) + 32) * 10) / 10) + " deg. F";
-            desc4.innerHTML = descValue4;
-            clouds4.innerHTML = cloudValue4 + "%";
+            getTemps()
+            getOutlooks()
+            getCloudiness()
         })
         .catch(err => alert("Wrong city name!"));
 }
@@ -118,7 +83,7 @@ function getTemps() {
         .catch(err => alert("Wrong city name!"));
 }
 
-function getOutlook() {
+function getOutlooks() {
     fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + input.value + '&appid=279e2439d044335148c1233102102740')
         .then(response => response.json())
         .then(data => {
