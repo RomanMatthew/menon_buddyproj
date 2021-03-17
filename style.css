@@ -21,8 +21,27 @@ body {
     float: left;
 }
 
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td,
+th {
+    border: 1px solid #111011;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
 .cloud {
-    width: 175px;
+    width: 150px;
     margin-top: 20px;
     margin-bottom: -90px;
     margin-left: 680px;
@@ -31,7 +50,7 @@ body {
 
 .bs-example {
     margin-top: 10px;
-    width: 300px;
+    width: 350px;
     margin-left: auto;
     margin-right: auto;
 }
