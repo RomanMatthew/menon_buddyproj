@@ -10,15 +10,15 @@
 </head>
 
 <body>
-    <img src='https://lh3.googleusercontent.com/proxy/hc08jm8zqgs-C-iSqyWp1vF43iNcV4OfTieIFJK-R_PPC4fMVYVVRayFGv5_GgDGCqPbHF9DCtQFwaKnhDaNiUArAHOuesZ4' class="cloud"></img>
+    <img src='https://toppng.com/public/uploads/thumbnail/super-mario-bros-cloud-sprites-super-mario-cloud-11562890585c6ojks4ppn.png' class="cloud"></img>
     <div id="leftCol">
         <br></br>
         </br>
         <p>
             <h4><b>settings</b></h2>
-                <button type="submit" class="btn btn-outline-info" style="width: 100px; margin-top: 10px;"><b>outlooks</b></button>
-                <button type="submit" class="btn btn-outline-danger" style="width: 100px; margin-top: 10px;"><b>temps</b></button>
-                <button type="submit" class="btn btn-outline-dark" style="width: 100px; margin-top: 10px;"><b>cloudiness</b></button>
+                <button type="submit" class="btn btn-outline-info" style="width: 100px; margin-top: 10px;" id='outlookBtn'><b>outlooks</b></button>
+                <button type="submit" class="btn btn-outline-danger" style="width: 100px; margin-top: 10px;" id='tempBtn'><b>temps</b></button>
+                <button type="submit" class="btn btn-outline-dark" style="width: 100px; margin-top: 10px;" id='cloudBtn'><b>cloudiness</b></button>
                 <button type="submit" class="btn btn-outline-success" style="width: 100px; margin-top: 10px;"><b>week</b></button>
                 <button type="submit" class="btn btn-outline-secondary" style="width: 100px; margin-top: 10px;"><b>day</b></button>
         </p>
@@ -36,16 +36,45 @@
             <p class="desc"></p>
         </div>
     </div> -->
-    <div class="bs-example jumbotron" id="statusForm">
+    <div class="bs-example jumbotron" id="statusForm" style="margin-top: -80px;">
         <h4 class="display-8" style="text-align:center;">
             <h1 class="name" id="name"></h1>
         </h4>
-        <hr class="my-4">
-        <h2>Monday | 03/15/2021</h2>
-        <p class="temp">Temperature: </p>
-        <p class="desc">Outlook: </p>
-        <p class="clouds">Cloudiness: </p>
     </div>
+    <table>
+        <tr>
+            <th>Weekday</th>
+            <th>Temperature</th>
+            <th>Outlook</th>
+            <th>Cloudiness</th>
+        </tr>
+        <tr>
+            <td>
+                Monday
+            </td>
+            <td class="temp">
+                <p class="temp" style="text-align: left;"></p>
+            </td>
+            <td class="desc">
+                <p class="desc"></p>
+            </td>
+            <td class="clouds">
+                <p class="clouds"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>Tuesday</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
     <!-- <div class="bs-example jumbotron" id="statusForm">
         <h4 class="display-8" style="text-align:center;">Tuesday | 03/16/2021</h4>
         <hr class="my-4">
