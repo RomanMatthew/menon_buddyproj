@@ -1,4 +1,5 @@
-// query
+const APIKEY = '279e2439d044335148c1233102102740'
+    // query
 var input = document.querySelector('.input_text');
 var query = document.querySelector('.btn-outline-primary'); // button press
 // name of the query
@@ -90,7 +91,7 @@ dayBtn4.addEventListener('click', function(name) {
 })
 
 function getData() {
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + input.value + '&appid=279e2439d044335148c1233102102740')
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + input.value + '&appid=' + APIKEY)
         .then(response => response.json())
         .then(data => {
             // show the location in the jumbotron
@@ -107,7 +108,7 @@ function getData() {
 
 function getDay(num) {
     clear()
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + input.value + '&appid=279e2439d044335148c1233102102740')
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + input.value + '&appid=' + APIKEY)
         .then(response => response.json())
         .then(data => {
             if (num == 0) {
@@ -165,7 +166,7 @@ function getDay(num) {
 }
 
 function getPrecipProbs() {
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + input.value + '&appid=279e2439d044335148c1233102102740')
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + input.value + '&appid=' + APIKEY)
         .then(response => response.json())
         .then(data => {
             var precipValue = data['list'][0]['pop'];
@@ -183,7 +184,7 @@ function getPrecipProbs() {
 }
 
 function getTemps() {
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + input.value + '&appid=279e2439d044335148c1233102102740')
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + input.value + '&appid=' + APIKEY)
         .then(response => response.json())
         .then(data => {
             // temp must be converted from kelvin to fahrenheit
@@ -202,7 +203,7 @@ function getTemps() {
 }
 
 function getOutlooks() {
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + input.value + '&appid=279e2439d044335148c1233102102740')
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + input.value + '&appid=' + APIKEY)
         .then(response => response.json())
         .then(data => {
             var descValue = data['list'][0]['weather'][0]['description'];
@@ -220,7 +221,7 @@ function getOutlooks() {
 }
 
 function getCloudiness() {
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + input.value + '&appid=279e2439d044335148c1233102102740')
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + input.value + '&appid=' + APIKEY)
         .then(response => response.json())
         .then(data => {
             var cloudValue = data['list'][0]['clouds']['all']
